@@ -1,1 +1,0 @@
-ssh -i C:\Users\GyeongMinKim\Desktop\Univ_Files\Projects_contests\Project_AJOU_Chatbot\AWS/EC2-KGM.pem ubuntu@ec2-54-180-112-218.ap-northeast-2.compute.amazonaws.com
