@@ -1,0 +1,18 @@
+sudo ln -f /srv/AjouChatbot/.config/uwsgi/uwsgi.service /etc/systemd/system/uwsgi.service
+
+sudo /home/ubuntu/myvenv/bin/uwsgi -i /srv/AjouChatbot/.config/uwsgi/Board.ini
+
+source myvenv/bin/activate
+
+sudo systemctl status uwsgi.service
+
+sudo systemctl stop uwsgi
+
+sudo systemctl reset-failed uwsgi
+
+sudo cp -f /srv/AjouChatbot/.config/nginx/Board.conf /etc/nginx/sites-available/Board.conf
+
+sudo ln -sf /etc/nginx/sites-available/Board.conf /etc/nginx/sites-enabled/Board.conf
+
+sudo systemctl daemon-reload && sudo systemctl restart nginx uwsgi
+
